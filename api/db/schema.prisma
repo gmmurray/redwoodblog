@@ -1,13 +1,13 @@
 // yarn redwood db save "migration name"
 // yarn rw db up
 datasource DS {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 generator client {
   provider      = "prisma-client-js"
-  binaryTargets = "native"
+  binaryTargets = ["native", "rhel-openssl-1.0.x"]
 }
 
 model Post {
